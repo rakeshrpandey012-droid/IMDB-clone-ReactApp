@@ -1,0 +1,154 @@
+/* ===== MOVIE LIST ===== */
+.movie-list {
+  padding: 28px 0 40px;
+}
+
+.movie-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tabs */
+.movie-list__tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.movie-list__tab {
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.movie-list__tab:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: #555;
+}
+
+.movie-list__tab.active {
+  background: var(--imdb-yellow);
+  color: #000;
+  border-color: var(--imdb-yellow);
+  font-weight: 700;
+}
+
+/* Responsive grid */
+.movie-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 18px;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Load more */
+.movie-list__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.movie-list__load-btn {
+  background: transparent;
+  color: var(--imdb-yellow);
+  border: 2px solid var(--imdb-yellow);
+  padding: 12px 36px;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.movie-list__load-btn:hover {
+  background: var(--imdb-yellow);
+  color: #000;
+}
+
+/* Error state */
+.movie-list__error {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.movie-list__error p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.movie-list__error button {
+  background: var(--imdb-yellow);
+  color: #000;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.movie-list__error button:hover {
+  background: var(--imdb-yellow-dark);
+}
+
+/* Empty state */
+.movie-list__empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.movie-list__empty p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.movie-list__empty strong {
+  color: var(--text-primary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .movie-list__grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-list__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .movie-list__grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .movie-list__tab {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .movie-list__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
