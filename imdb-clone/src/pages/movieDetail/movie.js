@@ -3,13 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Card from '../../components/card/Card';
 import './movie.css';
 
-const API_KEY = '2dca580c2a14b55200e784d157207b4d';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
 const BACKDROP_BASE = 'https://image.tmdb.org/t/p/w1280';
 const POSTER_BASE = 'https://image.tmdb.org/t/p/w500';
 const PROFILE_BASE = 'https://image.tmdb.org/t/p/w185';
-const FALLBACK_POSTER = 'https://via.placeholder.com/500x750/1e1e1e/666666?text=No+Image';
-const FALLBACK_PROFILE = 'https://via.placeholder.com/185x278/1e1e1e/666666?text=?';
+const FALLBACK_POSTER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'%3E%3Crect width='500' height='750' fill='%231e1e1e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='48' fill='%23666'%3ENo Image%3C/text%3E%3C/svg%3E";
+const FALLBACK_PROFILE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='185' height='278' viewBox='0 0 185 278'%3E%3Crect width='185' height='278' fill='%231e1e1e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='36' fill='%23666'%3E%3F%3C/text%3E%3C/svg%3E";
 
 // Star rating component
 const StarRating = ({ rating }) => {

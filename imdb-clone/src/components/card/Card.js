@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Card.css';
 
 const POSTER_BASE = 'https://image.tmdb.org/t/p/w342';
-const FALLBACK = 'https://via.placeholder.com/342x513/1e1e1e/666666?text=No+Image';
+const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='342' height='513' viewBox='0 0 342 513'%3E%3Crect width='342' height='513' fill='%231e1e1e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='36' fill='%23666'%3ENo Image%3C/text%3E%3C/svg%3E";
 
 const RatingBadge = ({ rating }) => {
   const score = Math.round(rating * 10) / 10;

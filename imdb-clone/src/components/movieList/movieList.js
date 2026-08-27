@@ -3,7 +3,7 @@ import { useParams, useSearchParams, useLocation } from 'react-router-dom';
 import Card from '../card/Card';
 import './movieList.css';
 
-const API_KEY = '2dca580c2a14b55200e784d157207b4d';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 const CATEGORIES = [

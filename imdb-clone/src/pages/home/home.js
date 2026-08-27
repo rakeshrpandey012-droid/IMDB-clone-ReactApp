@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import MovieList from '../../components/movieList/movieList';
 import './home.css';
 
-const API_KEY = '2dca580c2a14b55200e784d157207b4d';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
 const BACKDROP_BASE = 'https://image.tmdb.org/t/p/w1280';
 const POSTER_BASE = 'https://image.tmdb.org/t/p/w342';
