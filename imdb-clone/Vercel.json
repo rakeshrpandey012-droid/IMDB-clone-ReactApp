@@ -1,0 +1,20 @@
+{
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/build",
+  "env": {
+    "REACT_APP_TMDB_API_KEY": "@tmdb_api_key"
+  },
+  "images": {
+    "domains": [
+      "image.tmdb.org"
+    ],
+    "sizes": [60, 120, 240, 342, 500, 780, 1280],
+    "formats": ["image/avif", "image/webp"]
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
