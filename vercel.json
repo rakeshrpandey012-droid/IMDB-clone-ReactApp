@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd imdb-clone && npm install && npm run build",
+  "outputDirectory": "imdb-clone/build",
+  "framework": "create-react-app",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
