@@ -47,11 +47,13 @@
   height: 60vh;
   gap: 16px;
   color: var(--text-secondary);
+  animation: fadeInUp 0.5s ease;
 }
 
 .not-found h1 {
   font-size: 5rem;
   color: var(--imdb-yellow);
+  text-shadow: 0 0 40px rgba(245, 197, 24, 0.3);
 }
 
 .not-found p {
@@ -69,6 +71,8 @@
 
 .not-found a:hover {
   background: var(--imdb-yellow-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245, 197, 24, 0.3);
 }
 
 /* Footer */
@@ -107,4 +111,37 @@
 
 .footer-links a:hover {
   color: var(--imdb-yellow);
+}
+
+/* Footer responsive */
+@media (max-width: 480px) {
+  .footer {
+    padding: 24px 16px;
+  }
+
+  .footer-links {
+    gap: 14px;
+    font-size: 0.8rem;
+  }
+
+  .footer-logo {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .not-found h1 {
+    font-size: 3.5rem;
+  }
+
+  .not-found p {
+    font-size: 1rem;
+    padding: 0 20px;
+    text-align: center;
+  }
 }

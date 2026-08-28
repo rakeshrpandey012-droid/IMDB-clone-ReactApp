@@ -5,15 +5,18 @@
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-card);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  border: 1px solid transparent;
+  animation: fadeInUp 0.4s ease backwards;
 }
 
 .card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card), 0 0 20px rgba(245, 197, 24, 0.08);
+  border-color: rgba(245, 197, 24, 0.2);
   z-index: 2;
 }
 
@@ -77,6 +80,7 @@
   padding: 3px 7px;
   border-radius: 12px;
   letter-spacing: 0.3px;
+  backdrop-filter: blur(4px);
 }
 
 .rating--good {
@@ -135,6 +139,11 @@
 }
 
 /* Skeleton card */
+.card--skeleton {
+  border-color: transparent;
+  animation: none;
+}
+
 .card--skeleton .card__poster-wrap {
   background: linear-gradient(90deg, #1e1e1e 25%, #2a2a2a 50%, #1e1e1e 75%);
   background-size: 1000px 100%;
@@ -160,4 +169,24 @@
   border-radius: 4px;
   width: 40%;
   display: block;
+}
+
+/* Very small cards */
+@media (max-width: 400px) {
+  .card__info {
+    padding: 8px 8px 10px;
+  }
+
+  .card__title {
+    font-size: 0.78rem;
+  }
+
+  .card__year {
+    font-size: 0.68rem;
+  }
+
+  .card__rating {
+    font-size: 0.65rem;
+    padding: 2px 5px;
+  }
 }

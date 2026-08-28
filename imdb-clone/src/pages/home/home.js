@@ -44,16 +44,6 @@ const Home = () => {
     fetchAll();
   }, []);
 
-  // Auto-advance hero
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (trending.length === 0) return;
-    const timer = setInterval(() => {
-      changeHero('next');
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [trending.length, heroIndex]);
-
   const changeHero = useCallback((direction) => {
     if (heroAnimating) return;
     setHeroAnimating(true);
@@ -65,6 +55,15 @@ const Home = () => {
       setHeroAnimating(false);
     }, 300);
   }, [heroAnimating, trending.length]);
+
+  // Auto-advance hero
+  useEffect(() => {
+    if (trending.length === 0) return;
+    const timer = setInterval(() => {
+      changeHero('next');
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [trending.length, heroIndex, changeHero]);
 
   const hero = trending[heroIndex];
 

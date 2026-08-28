@@ -66,6 +66,30 @@ ul {
   list-style: none;
 }
 
+/* Focus visible for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid var(--imdb-yellow);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--imdb-yellow);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(245, 197, 24, 0.35);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(245, 197, 24, 0.35);
+  color: #fff;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -93,4 +117,25 @@ ul {
   background-size: 1000px 100%;
   animation: shimmer 1.8s infinite;
   border-radius: var(--radius-sm);
+}
+
+/* Reusable fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
 }

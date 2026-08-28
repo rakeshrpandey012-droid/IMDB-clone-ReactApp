@@ -61,6 +61,7 @@
   padding: 0 60px;
   max-width: 700px;
   z-index: 2;
+  animation: fadeInUp 0.6s ease;
 }
 
 .hero__meta {
@@ -138,6 +139,7 @@
 .hero__btn--primary:hover {
   background: var(--imdb-yellow-dark);
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(245, 197, 24, 0.35);
 }
 
 /* Arrow buttons */
@@ -158,6 +160,7 @@
   justify-content: center;
   transition: var(--transition);
   cursor: pointer;
+  backdrop-filter: blur(4px);
 }
 
 .hero__arrow:hover {
@@ -199,6 +202,7 @@
   background: var(--imdb-yellow);
   width: 24px;
   border-radius: 4px;
+  box-shadow: 0 0 8px rgba(245, 197, 24, 0.5);
 }
 
 /* Thumbnail strip */
@@ -247,6 +251,7 @@
 .hero__thumb.active {
   border-color: var(--imdb-yellow);
   transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
 }
 
 /* ===== CTA SECTION ===== */
@@ -298,6 +303,7 @@
 .home__cta-btn:hover {
   background: var(--imdb-yellow-dark);
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245, 197, 24, 0.3);
 }
 
 .home__cta-btn--outlined {
@@ -360,5 +366,93 @@
   .hero__dots {
     bottom: 70px;
     right: 16px;
+  }
+
+  .home__cta {
+    padding: 36px 16px;
+  }
+
+  .home__cta-btn {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    height: 320px;
+  }
+
+  .hero__content {
+    padding: 0 14px;
+    bottom: 65px;
+  }
+
+  .hero__title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .hero__meta {
+    margin-bottom: 8px;
+  }
+
+  .hero__tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+  }
+
+  .hero__btn {
+    padding: 8px 18px;
+    font-size: 0.82rem;
+  }
+
+  .hero__arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .hero__arrow--left {
+    left: 8px;
+  }
+
+  .hero__arrow--right {
+    right: 8px;
+  }
+
+  .hero__thumbnails {
+    padding: 8px 14px;
+    gap: 6px;
+  }
+
+  .hero__thumb {
+    width: 40px;
+    height: 60px;
+    border-radius: 4px;
+  }
+
+  .hero__dots {
+    bottom: 58px;
+    right: 10px;
+    gap: 5px;
+  }
+
+  .hero__dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .hero__dot.active {
+    width: 18px;
+  }
+
+  .home__cta-links {
+    gap: 8px;
+  }
+
+  .home__cta-btn {
+    padding: 7px 14px;
+    font-size: 0.75rem;
   }
 }
